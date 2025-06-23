@@ -3,36 +3,60 @@ import cv2
 import torch
 import torchvision
 from torchvision import transforms
+from torchvision.models.detection import SSD300_VGG16_Weights
 from PIL import Image
+import json
 
-# Load model
-model = torchvision.models.detection.ssd300_vgg16(pretrained=True)
+
+# Load SSD model (no warnings)
+weights = SSD300_VGG16_Weights.DEFAULT
+model = torchvision.models.detection.ssd300_vgg16(weights=weights)
 model.eval()
 
-transform = transforms.Compose([
-    transforms.Resize((300, 300)),
-    transforms.ToTensor(),
-    transforms.Normalize([0.485, 0.456, 0.406],
-                         [0.229, 0.224, 0.225])
-])
+# Preprocessing transform
+transform = weights.transforms()
 
+# Directory setup
 input_dir = "val2017"
 output_dir = "outputs/ssd"
 os.makedirs(output_dir, exist_ok=True)
 
-for filename in os.listdir(input_dir)[:20]:  # Change to [:N] if needed
-    path = os.path.join(input_dir, filename)
-    image = Image.open(path).convert("RGB")
+# Inference and save predictions
+predictions_ssd = []
+
+for filename in sorted(os.listdir(input_dir))[:20]:  # First 20 images
+    image_path = os.path.join(input_dir, filename)
+    image = Image.open(image_path).convert("RGB")
     img_tensor = transform(image)
 
     with torch.no_grad():
-        predictions = model([img_tensor])[0]
+        prediction = model([img_tensor])[0]
 
-    img_cv = cv2.imread(path)
-    for i, box in enumerate(predictions["boxes"]):
-        score = predictions["scores"][i].item()
+    boxes = []
+    scores = []
+    img_cv = cv2.imread(image_path)
+
+    for i, box in enumerate(prediction["boxes"]):
+        score = prediction["scores"][i].item()
         if score > 0.5:
             x1, y1, x2, y2 = map(int, box)
+            boxes.append([x1, y1, x2, y2])
+            scores.append(score)
             cv2.rectangle(img_cv, (x1, y1), (x2, y2), (0, 0, 255), 2)
 
-    cv2.imwrite(os.path.join(output_dir, filename), img_cv)
+    # Save image with boxes
+    output_path = os.path.join(output_dir, filename)
+    cv2.imwrite(output_path, img_cv)
+
+    # Collect predictions
+    predictions_ssd.append({
+        "image_id": filename,
+        "boxes": boxes,
+        "scores": scores
+    })
+
+# Save to JSON
+with open("ssd_predictions.json", "w") as f:
+    json.dump(predictions_ssd, f)
+
+print("SSD inference complete. Predictions saved to ssd_predictions.json")
