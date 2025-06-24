@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.6.24)  24 JUN 2025 19:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.6.24)  24 JUN 2025 21:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -192,39 +192,72 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 {C:/Users/janaa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 91.
+(Font)              <12> on input line 92.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 91.
+(Font)              <8> on input line 92.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 91.
+(Font)              <6> on input line 92.
 
-Underfull \hbox (badness 6332) in paragraph at lines 97--98
+Underfull \hbox (badness 6332) in paragraph at lines 98--99
 []\OT1/cmr/m/n/12 False pos-i-tives in back-
  []
 
 
-Overfull \hbox (38.72588pt too wide) in paragraph at lines 91--100
+Overfull \hbox (38.72588pt too wide) in paragraph at lines 92--101
  [][] 
  []
 
-[2] [3] (report.aux)
+[2]
+<yolo_result1.png, id=12, 332.74312pt x 470.50781pt>
+File: yolo_result1.png Graphic file (type png)
+<use yolo_result1.png>
+Package pdftex.def Info: yolo_result1.png  used on input line 128.
+(pdftex.def)             Requested size: 211.38832pt x 298.91272pt.
+<yolo_result2.png, id=14, 472.01344pt x 351.56343pt>
+File: yolo_result2.png Graphic file (type png)
+<use yolo_result2.png>
+Package pdftex.def Info: yolo_result2.png  used on input line 133.
+(pdftex.def)             Requested size: 211.38832pt x 157.4457pt.
+ [3]
+<ssd_result1.png, id=18, 335.75438pt x 460.72125pt>
+File: ssd_result1.png Graphic file (type png)
+<use ssd_result1.png>
+Package pdftex.def Info: ssd_result1.png  used on input line 144.
+(pdftex.def)             Requested size: 211.38832pt x 290.06612pt.
+<ssd_result2.png, id=19, 472.01344pt x 355.3275pt>
+File: ssd_result2.png Graphic file (type png)
+<use ssd_result2.png>
+Package pdftex.def Info: ssd_result2.png  used on input line 149.
+(pdftex.def)             Requested size: 211.38832pt x 159.13141pt.
+ [4 <./yolo_result1.png> <./yolo_result2.png>]
+<rcnn_result1.png, id=25, 332.74312pt x 472.76625pt>
+File: rcnn_result1.png Graphic file (type png)
+<use rcnn_result1.png>
+Package pdftex.def Info: rcnn_result1.png  used on input line 160.
+(pdftex.def)             Requested size: 211.38832pt x 300.3475pt.
+<rcnn_result2.png, id=26, 475.7775pt x 353.82187pt>
+File: rcnn_result2.png Graphic file (type png)
+<use rcnn_result2.png>
+Package pdftex.def Info: rcnn_result2.png  used on input line 165.
+(pdftex.def)             Requested size: 211.38832pt x 157.20457pt.
+ [5 <./ssd_result1.png> <./ssd_result2.png>] [6 <./rcnn_result1.png> <./rcnn_result2.png>] (report.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3382 strings out of 474486
- 59763 string characters out of 5743755
+ 3431 strings out of 474486
+ 60872 string characters out of 5743755
  1935542 words of memory out of 5000000
- 25673 multiletter control sequences out of 15000+600000
+ 25722 multiletter control sequences out of 15000+600000
  563574 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,10n,65p,462b,291s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,10n,65p,462b,386s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\janaa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/janaa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/janaa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/janaa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on report.pdf (3 pages, 57840 bytes).
+Output written on report.pdf (6 pages, 3804889 bytes).
 PDF statistics:
- 32 PDF objects out of 1000 (max. 8388607)
+ 54 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

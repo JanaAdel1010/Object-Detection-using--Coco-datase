@@ -83,6 +83,7 @@ YOLOv5 is the latest iteration of the YOLO (You Only Look Once) series, develope
     \item \textbf{Best For:} Real-time object detection in videos, surveillance, robotics.
 \end{itemize}
 
+
 \subsection*{Quantitative Results}
 
 \begin{table}[H]
@@ -117,5 +118,55 @@ Each model has specific strengths and is suited to different deployment scenario
     \item Choose \textbf{SSD} for fast inference in constrained environments but avoid it for complex scenes.
     \item \textbf{YOLOv5} is a great middle-ground with state-of-the-art speed and solid accuracy for real-time use.
 \end{itemize}
+\section*{Results and Discussion}
+
+\subsection*{YOLOv5 Results}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{yolo_result1.png}
+        \caption*{\textbf{Image 1:} YOLOv5 correctly detected the person but missed the dog due to overlap .}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{yolo_result2.png}
+        \caption*{\textbf{Image 2:} missed alot of objects in the background.}
+    \end{minipage}
+    \caption{Sample predictions using YOLOv5}
+\end{figure}
+
+\subsection*{SSD Results}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{ssd_result1.png}
+        \caption*{\textbf{Image 1:} SSD was able to detect both the person box and dog box despite the overlap.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{ssd_result2.png}
+        \caption*{\textbf{Image 2:} Also Missed small and distant objects.}
+    \end{minipage}
+    \caption{Sample predictions using SSD}
+\end{figure}
+
+\subsection*{Faster R-CNN Results}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{rcnn_result1.png}
+        \caption*{\textbf{Image 1:} detected the person but a false postive missing the dog.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{rcnn_result2.png}
+        \caption*{\textbf{Image 2:} Accurately localized small objects even at a distance.}
+    \end{minipage}
+    \caption{Sample predictions using Faster R-CNN}
+\end{figure}
 
 \end{document}
+

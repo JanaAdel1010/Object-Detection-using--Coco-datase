@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1750783269.34459 "c:/School/Term 8/Computer vision/Assignments/4 partt2/report.tex" "report.pdf" "report" 1750783270.53426 0
+["pdflatex"] 1750788002.29924 "c:/School/Term 8/Computer vision/Assignments/4 partt2/report.tex" "report.pdf" "report" 1750788005.37468 0
   "C:/Users/janaa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1750715003 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/janaa/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1750715008 14064 6be77086d5d513e87a86ce0650848186 ""
   "C:/Users/janaa/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1750714978 24225046 244f2ffae31a4e86060ef3b02d4ff633 ""
@@ -39,9 +39,15 @@
   "C:/Users/janaa/AppData/Local/Programs/MiKTeX/tex/latex/graphics/keyval.sty" 1665067579 2671 7e67d78d9b88c845599a85b2d41f2e39 ""
   "C:/Users/janaa/AppData/Local/Programs/MiKTeX/tex/latex/graphics/trig.sty" 1665067579 4023 293ea1c16429fc0c4cf605f4da1791a9 ""
   "C:/Users/janaa/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1704400941 30006 57b07afb710ee2f649c65cfbafda39c1 ""
-  "c:/School/Term 8/Computer vision/Assignments/4 partt2/report.tex" 1750783267 5555 725cb4a0d98b503983ead7924c3d5d68 ""
-  "report.aux" 1750783270 164 dd79a176edb9f47b51fb1ac22b3c4eda "pdflatex"
-  "report.tex" 1750783267 5555 725cb4a0d98b503983ead7924c3d5d68 ""
+  "c:/School/Term 8/Computer vision/Assignments/4 partt2/report.tex" 1750788004 7332 ff767acd20728da4ca5f6c508ebf86b3 ""
+  "rcnn_result1.png" 1750787398 500864 7fddc654a56d3d55a2bc6623116c5d7b ""
+  "rcnn_result2.png" 1750787374 533847 f72882bd1a6cddc3ff90c52fb4566d12 ""
+  "report.aux" 1750788004 569 9c550ce9015d2e6dc7391f5cc3e65497 "pdflatex"
+  "report.tex" 1750788004 7332 ff767acd20728da4ca5f6c508ebf86b3 ""
+  "ssd_result1.png" 1750787481 491668 269f5dbf1712354807ea7c8751c2f615 ""
+  "ssd_result2.png" 1750787506 500496 720725d092ee97284ba143129c6e2b48 ""
+  "yolo_result1.png" 1750787539 498435 32e4746317bffc59c224349c87189b7d ""
+  "yolo_result2.png" 1750787550 508762 c6bf4e2e11b5f9dd44fe3a173e59e911 ""
   (generated)
   "report.aux"
   "report.log"
