@@ -10,7 +10,7 @@ os.makedirs(output_dir, exist_ok=True)
 model = YOLO("yolov8n.pt")
 predictions = []
 
-for filename in sorted(os.listdir(input_dir))[:20]:
+for filename in sorted(os.listdir(input_dir))[:50]:
     path = os.path.join(input_dir, filename)
     results = model(path, conf=0.5, iou=0.5)
     img = cv2.imread(path)
