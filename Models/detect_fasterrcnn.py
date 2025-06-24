@@ -4,20 +4,17 @@ from PIL import Image
 from torchvision import transforms as T
 from torchvision.models.detection import fasterrcnn_resnet50_fpn, FasterRCNN_ResNet50_FPN_Weights
 
-# Set dataset: "coco" or "voc"
 dataset = "voc"
 input_dir = "val2017" if dataset == "coco" else "VOCdevkit/VOC2007/JPEGImages"
 output_dir = f"outputs/{dataset}/faster_rcnn"
 json_output = f"rcnn_predictions_{dataset}.json"
 os.makedirs(output_dir, exist_ok=True)
 
-# Load model
 weights = FasterRCNN_ResNet50_FPN_Weights.DEFAULT
 model = fasterrcnn_resnet50_fpn(weights=weights)
 model.eval()
 transform = T.Compose([T.ToTensor()])
 
-# Run inference
 predictions = []
 for filename in sorted(os.listdir(input_dir))[:20]:
     path = os.path.join(input_dir, filename)
