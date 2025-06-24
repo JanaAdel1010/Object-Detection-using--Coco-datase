@@ -16,7 +16,7 @@ model.eval()
 transform = T.Compose([T.ToTensor()])
 
 predictions = []
-for filename in sorted(os.listdir(input_dir))[:20]:
+for filename in sorted(os.listdir(input_dir))[:50]:
     path = os.path.join(input_dir, filename)
     image = Image.open(path).convert("RGB")
     tensor = transform(image)
