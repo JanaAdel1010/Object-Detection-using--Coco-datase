@@ -1,25 +1,20 @@
-import os
-import cv2
-import json
+import os, cv2, json
 from ultralytics import YOLO
 
-model = YOLO("yolov8n.pt") 
-
-input_dir = "val2017"
-output_dir = "outputs/yolo"
+dataset = "voc"
+input_dir = "val2017" if dataset == "coco" else "VOCdevkit/VOC2007/JPEGImages"
+output_dir = f"outputs/{dataset}/yolo"
+json_output = f"yolo_predictions_{dataset}.json"
 os.makedirs(output_dir, exist_ok=True)
 
-predictions_yolo = []
+model = YOLO("yolov8n.pt")
+predictions = []
 
 for filename in sorted(os.listdir(input_dir))[:20]:
-    image_path = os.path.join(input_dir, filename)
-    
-    # Run YOLO inference
-    results = model(image_path, conf=0.5, iou=0.5)
-
-    boxes = []
-    scores = []
-    img = cv2.imread(image_path)
+    path = os.path.join(input_dir, filename)
+    results = model(path, conf=0.5, iou=0.5)
+    img = cv2.imread(path)
+    boxes, scores = [], []
 
     for box in results[0].boxes:
         x1, y1, x2, y2 = map(int, box.xyxy[0].tolist())
@@ -28,18 +23,9 @@ for filename in sorted(os.listdir(input_dir))[:20]:
         scores.append(score)
         cv2.rectangle(img, (x1, y1), (x2, y2), (255, 0, 0), 2)
 
-    # Save image
     cv2.imwrite(os.path.join(output_dir, filename), img)
+    predictions.append({"image_id": filename, "boxes": boxes, "scores": scores})
 
-    # Save predictions
-    predictions_yolo.append({
-        "image_id": filename,
-        "boxes": boxes,
-        "scores": scores
-    })
-
-# Save predictions to JSON
-with open("yolo_predictions.json", "w") as f:
-    json.dump(predictions_yolo, f)
-
-print("YOLOv8 inference complete. Predictions saved to yolo_predictions.json")
+with open(json_output, "w") as f:
+    json.dump(predictions, f)
+print(f"YOLOv8 finished on {dataset.upper()} → {json_output}")
